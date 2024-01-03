@@ -1,39 +1,29 @@
-
-import { Dano } from "./Danos/Dano.js";
+import { Atributo } from "./Atributo.js";
 
 export class Personagem {
     // Atributos Básicos
     #Nome;
     #Classe;
-    #Raca;
     #Level;
-
-    // Atributos Ataque
     #Dado;
+    #attr;
 
-    get Nome() {
-        return this.#Nome;
-    }
-
-    get Classe() {
-        return this.#Classe;
-    }
-
-    get Raca() {
-        return this.#Raca;
-    }
-
-    get Level() {
-        return this.#Level;
-    }
-
-    constructor(nome) {
+    constructor(nome, classe, attr) {
         this.#Nome = nome;
-
+        this.#Classe = classe;
+        this.#attr = new Atributo(...attr);
     }
 
     rolarDado() {
         this.#Dado = parseInt(Math.random() * 100);
         return this.#Dado
+    }
+
+    setVitalidade(pts) {
+
+    }
+
+    setDestreza(pts) {
+        
     }
 }
